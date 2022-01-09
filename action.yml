@@ -1,0 +1,18 @@
+name: 'Sync Github PRs to Notion'
+description: 'Update Notion when there is a new Github issue or an update to it'
+branding:
+    icon: 'git-pull-request'
+    color: 'black'
+inputs:
+    githubKey:
+        description: 'personal access token generated on github'
+        required: true
+    notionKey:
+        description: 'bot secret generated on notion'
+        required: true
+    notionDatabaseId:
+        description: 'database id of notion database'
+        required: true
+runs:
+    using: 'node12'
+    main: 'dist/index.js'
